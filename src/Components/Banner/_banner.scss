@@ -1,0 +1,53 @@
+@import "../../AppVariables.scss";
+.banner {
+  padding: 26rem 0 10rem 0;
+  width: 100vw;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-around;
+    width: 100%;
+  }
+
+  &__about-me {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    min-height: 100%;
+    // width: 100%;
+    gap: 2rem;
+
+    &__welcome {
+      font-weight: 70rem;
+      letter-spacing: 0.1rem;
+      padding: 0.8rem 1rem;
+      background: linear-gradient(
+        90.21deg,
+        rgba(170, 54, 124, 0.5) -5.91%,
+        rgba(74, 47, 189, 0.5) 111.58%
+      );
+      width: 30%;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      font-size: 2rem;
+    }
+
+    &__heading {
+    }
+    &__description {
+    }
+    &__catch-up-button {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 30%;
+    }
+  }
+
+  &__floating-astronaut {
+    img {
+      width: 70%;
+    }
+  }
+}

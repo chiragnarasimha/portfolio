@@ -1,14 +1,15 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.scss";
+import Banner from "./Components/Banner/Banner.tsx";
+import NavBar from "./Components/NavBar/NavBar.tsx";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
-      <main className="app__container">THIS IS THE TITLE</main>
+      <main className="app__container">
+        <NavBar />
+        <Banner />
+        <section className="app__container__TEST_DIV">TEST</section>
+      </main>
     </>
   );
 }
