@@ -9,7 +9,7 @@ const Banner = () => {
   const wordsToRotate = ["Front End Developer", "Problem Solver"];
   const [wordToType, setWordToType] = useState("");
   const [timeToTransitionToNextLetter, settimeToTransitionToNextLetter] =
-    useState(second);
+    useState(3 - Math.random() * 100);
   const timeToTransitionToNewWord = 2000;
 
   const tick = () => {
@@ -18,9 +18,11 @@ const Banner = () => {
     let updatedWord = isDeleting
       ? word.substring(0, word.length - 1)
       : word.substring(0, word.length);
-    setWordToType(isDeleting
-      ? word.substring(0, word.length - 1)
-      : word.substring(0, word.length);)
+    setWordToType(
+      isDeleting
+        ? word.substring(0, word.length - 1)
+        : word.substring(0, word.length)
+    );
   };
 
   useEffect(() => {
