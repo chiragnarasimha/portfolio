@@ -5,7 +5,6 @@ import floatingChiragHeart from "../../assets/img/floating-chirag/floating-chira
 import floatingChiragMusic from "../../assets/img/floating-chirag/floating-chirag-music.png";
 import floatingChiragChatBubble from "../../assets/img/floating-chirag/floating-chirag-chatBubble.png";
 import floatingChiragChatWithDiamond from "../../assets/img/floating-chirag/floating-chirag-chatWithDiamond.png";
-import React from "react";
 import { RightArrow } from "../../assets/img/ReactComponents/RightArrow";
 
 import { useEffect, useState } from "react";
@@ -16,23 +15,22 @@ const Banner = () => {
   const [wordToType, setWordToType] = useState<string>("");
   const [timeToTransitionToNextLetter, setTimeToTransitionToNextLetter] =
     useState<number>(300 - Math.random() * 100);
-  const timeToTransitionToNewWord = 2000;
+  const timeToTransitionToNewWord = 700;
 
   const tick = () => {
-    let word = wordsToRotate[indexOfWordToDisplay % wordsToRotate.length];
-    let updatedWord = isDeletingLetter
+    const word = wordsToRotate[indexOfWordToDisplay % wordsToRotate.length];
+    const updatedWord = isDeletingLetter
       ? word.substring(0, wordToType.length - 1)
       : word.substring(0, wordToType.length + 1);
     setWordToType(updatedWord);
 
     /** Mimik a person deleting letters */
     if (isDeletingLetter) {
-      setTimeToTransitionToNextLetter((prevTimeToTransitionToNextLetter) => {
-        prevTimeToTransitionToNextLetter = Math.floor(
-          prevTimeToTransitionToNextLetter / 2
+      if (timeToTransitionToNextLetter > 100)
+        setTimeToTransitionToNextLetter(
+          (prevTimeToTransitionToNextLetter) =>
+            prevTimeToTransitionToNextLetter - 100
         );
-        return prevTimeToTransitionToNextLetter;
-      });
     }
 
     if (!isDeletingLetter && updatedWord === word) {
@@ -41,12 +39,12 @@ const Banner = () => {
     } else if (isDeletingLetter && updatedWord === ``) {
       setIsDeletingLetter(false);
       setIndexOfWordToDisplay(indexOfWordToDisplay + 1);
-      setTimeToTransitionToNextLetter(200);
+      setTimeToTransitionToNextLetter(150);
     }
   };
 
   useEffect(() => {
-    let ticker = setInterval(() => {
+    const ticker = setInterval(() => {
       tick();
     }, timeToTransitionToNextLetter);
 
