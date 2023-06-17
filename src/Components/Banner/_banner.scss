@@ -25,21 +25,9 @@
     &__welcome {
       font-weight: 70rem;
       letter-spacing: 0.1rem;
-      // background: -webkit-linear-gradient(
-      //   -90deg,
-      //   $color-primary-light-1,
-      //   $color-primary-light-2
-      // );
-      background: radial-gradient(
-        circle at 3.9% 11.3%,
-        rgb(237, 120, 153) 0%,
-        rgb(240, 202, 158) 71.6%,
-        // rgb(249, 238, 221) 99.8%
-      );
+      @include hoverEffectText();
+      animation-duration: 5s;
 
-      background-clip: text;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
       width: fit-content;
       // border: 1px solid rgba(255, 255, 255, 0.5);
       font-size: 3rem;
@@ -47,7 +35,7 @@
 
     &__heading {
       padding: 1rem 0;
-      font-size: 4.5rem;
+      font-size: 4rem;
       letter-spacing: 0.08rem;
     }
     &__description {
@@ -85,6 +73,16 @@
     width: 40%;
     &__original {
       width: 100%;
+      position: relative;
+      // animation: imgUpDown 2s linear infinite;
+      padding: 1rem 1rem;
+      transition: $transition0_3;
+      &:hover {
+        transform: scale(1.1);
+        border: 1rem solid rgba(255, 255, 255, 0.575);
+        border-radius: 2rem;
+        @include hoverEffectsSVG();
+      }
     }
 
     //   &__other {
@@ -125,3 +123,26 @@
     //   }
   }
 }
+
+// @keyframes imgUpDown {
+//   0% {
+//     transform: translateY(-20px);
+//   }
+//   50% {
+//     transform: translateY(20px);
+//   }
+//   100% {
+//     transform: translateY(-20rem);
+//   }
+// }
+// @keyframes imgUpDown {
+//   0% {
+//     top: -2rem;
+//   }
+//   50% {
+//     top: 2rem;
+//   }
+//   100% {
+//     top: -2rem;
+//   }
+// }

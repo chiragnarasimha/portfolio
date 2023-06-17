@@ -47,8 +47,8 @@
 @mixin hoverEffectBackgroundGradient {
   background: radial-gradient(
     circle at 3.9% 11.3%,
-    rgb(237, 120, 153) 0%,
-    rgb(240, 202, 158) 71.6%,
+    #ed7899 0%,
+    #f0ca9e 71.6%,
     // rgb(249, 238, 221) 99.8%
   );
 }
@@ -64,26 +64,41 @@
 }
 
 @mixin hoverEffectsLink {
-  // background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-  @include hoverEffectBackgroundGradient;
-  background-size: 400% 400%;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  width: fit-content;
-  animation: gradient 2s ease infinite;
+  @include hoverEffectText();
   transform: scale(1.2);
 }
 
-@mixin hoverEffectsIcon {
+@mixin gradientEffectText {
+  background: linear-gradient(to right, #ed7899, #f0ca9e, #ec537f, #ed7899);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@mixin hoverEffectText {
+  @include gradientEffectText();
+  background-size: 200%;
+  animation: gradientText 3s linear infinite;
+}
+
+@mixin hoverEffectsSVG {
   // fill: "url(linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab))";
   // background-image: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-  @include hoverEffectBackgroundGradient;
-  background-size: 400% 400%;
-  animation: gradient 2s ease infinite;
-  color: $color-grey-light-1;
-  fill: $color-grey-light-1;
+  // background: linear-gradient(
+  //   to right,
+  //   $color-primary-dark-2,
+  //   $color-primary-dark-1
+  // );
+  // background-size: 400% 400%;
+  // animation: gradient 2s ease infinite;
   // box-shadow: $shadow-button-dark;
+  // background: radial-gradient(
+  //   circle at 10% 20%,
+  //   rgb(69, 86, 102) 0%,
+  //   rgb(34, 34, 34) 90%
+  // );
+
+  background: linear-gradient(to top left, #392657 0%, #392657 80%);
 }
 
 @keyframes gradient {
@@ -96,6 +111,19 @@
   100% {
     background-position: 0% 50%;
   }
+}
+
+@keyframes gradientText {
+  from {
+    background-position: 0% center;
+  }
+  to {
+    background-position: -200% center;
+  }
+  // }
+  // 100% {
+  //   background-position: 0% center;
+  // }
 }
 
 @mixin active {

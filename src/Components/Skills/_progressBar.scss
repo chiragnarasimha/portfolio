@@ -1,0 +1,118 @@
+@import "../../AppVariables.scss";
+@import "../../Mixins.scss";
+// **************************** Progress Bar ables **************************** //
+$primary-light: #39ddfa;
+$primary: #00abdf;
+$primary-dark: #008ada;
+
+$white: #ffffff;
+$grey-light-1: #ebf5fc;
+$grey-light-2: #d5e0f3;
+$grey-light-3: #c1d9f0;
+$grey-dark: #646b8c;
+
+$background: #ffffffdc;
+$grey-light-1: $background;
+
+.progress-bar {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  //   background: $grey-light-2;
+  padding: 2rem;
+}
+
+.card {
+  width: 34rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2rem;
+  padding: 1rem;
+
+  &__percent {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 6rem;
+  }
+
+  &__number {
+    position: absolute;
+    color: $grey-dark;
+    font-size: 3.6rem;
+    font-family: "DM Sans", sans-serif;
+  }
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    h2 {
+      font-size: 1.8rem;
+      font-family: "DM Sans", sans-serif;
+      letter-spacing: 1.2px;
+      margin-bottom: 1rem;
+      color: $primary;
+    }
+    p {
+      font-size: 1.4rem;
+      color: $grey-dark;
+    }
+  }
+}
+
+svg {
+  position: relative;
+  width: 24rem;
+  height: 24rem;
+  z-index: 1000;
+  transform: rotate(-90deg);
+}
+
+svg circle {
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke-linecap: round;
+  transform: translate(3rem, 3rem);
+  stroke-dasharray: 565.49; // 2 * PI * radius
+  stroke-dashoffset: 282.75;
+  transition: all 1s ease;
+  stroke-width: 24;
+}
+.circle {
+  position: absolute;
+  width: 23rem;
+  height: 23rem;
+  border-radius: 50%;
+  //   box-shadow: 6px 6px 8px $grey-light-2, -6px -6px 8px $white;
+  background: $white;
+
+  &__medium {
+    width: 20.5rem;
+    height: 20.5rem;
+    box-shadow: inset 8px 8px 10px $grey-light-2, inset -4px -4px 8px $white;
+  }
+  &__small {
+    width: 15.5rem;
+    height: 15.5rem;
+    box-shadow: 6px 6px 8px $grey-light-2, -2px -2px 8px $white;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    transform: translateY(-40px) scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}

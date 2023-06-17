@@ -1,0 +1,106 @@
+@import "../../AppVariables.scss";
+@import "../../Mixins.scss";
+
+$primarydark: #008ada;
+
+$white: #ffffff;
+$greyLight1: #ebf5fc;
+$greyLight2: #d5e0f3;
+$greyLight3: #c1d9f0;
+$greyDark: #646b8c;
+
+.circle-progress-bar {
+  &__container {
+    width: 25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2rem;
+    padding: 5rem;
+
+    &__percent {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 6rem;
+    }
+
+    &__number {
+      position: absolute;
+      color: $greyDark;
+      font-size: 3.6rem;
+      font-family: "DM Sans", sans-serif;
+    }
+
+    &__description {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+
+      h2 {
+        font-size: 1.8rem;
+        font-family: "DM Sans", sans-serif;
+        letter-spacing: 1.2px;
+        margin-bottom: 1rem;
+        @include hoverEffectText();
+      }
+      p {
+        font-size: 1.4rem;
+        color: $greyDark;
+      }
+    }
+  }
+
+  &__svg {
+    position: relative;
+    width: 24rem;
+    height: 24rem;
+    z-index: 1000;
+    transform: rotate(-90deg);
+  }
+
+  &__circle__progress-percentage-fill {
+    width: 100%;
+    height: 100%;
+    fill: none;
+    stroke-linecap: round;
+    transform: translate(3rem, 3rem);
+    stroke-dasharray: 565.49; // 2 * PI * radius
+    stroke-dashoffset: 282.75;
+    transition: all 1s ease;
+    stroke-width: 24;
+  }
+
+  &__circle {
+    position: absolute;
+    width: 23rem;
+    height: 23rem;
+    border-radius: 50%;
+    background: $greyLight1;
+
+    &__medium {
+      width: 20.5rem;
+      height: 20.5rem;
+      box-shadow: inset 8px 8px 10px $greyLight2, inset -4px -4px 8px $white;
+    }
+    &__small {
+      width: 15.5rem;
+      height: 15.5rem;
+      box-shadow: 6px 6px 8px $greyLight2, -2px -2px 8px $white;
+    }
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    transform: translateY(-40px) scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}

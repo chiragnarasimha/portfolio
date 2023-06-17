@@ -5,7 +5,7 @@ import "./_banner.scss";
 // import floatingChiragMusic from "../../assets/img/floating-chirag/floating-chirag-music.png";
 // import floatingChiragChatBubble from "../../assets/img/floating-chirag/floating-chirag-chatBubble.png";
 // import floatingChiragChatWithDiamond from "../../assets/img/floating-chirag/floating-chirag-chatWithDiamond.png";
-import floatingChiragOriginal from "../../assets/img/floating-chirag/floating-chirag-original.png";
+import floatingChiragOriginal from "../../assets/img/floating-chirag/floating-chirag-original-compressed.png";
 
 import { RightArrow } from "../../assets/img/ReactComponents/RightArrow";
 
@@ -19,7 +19,7 @@ const Banner = () => {
 
   const fullGreetingMessage = "Welcome! I am Chirag";
   const fullGreetingMessageLength = fullGreetingMessage.length;
-  const decryptionAnimationSpeed = 0.2;
+  const decryptionAnimationSpeed = 0.4;
   const tick2 = () => {
     let updatedWord = fullGreetingMessage
       .split("")
@@ -66,9 +66,9 @@ const Banner = () => {
 
   /** This is how to emulate typing */
   const wordsToRotate = [
+    "PROBLEM SOLVER",
     "SOFTWARE ENGINEER",
     "FRONT END DEVELOPER",
-    "PROBLEM SOLVER",
   ];
   const [indexOfWordToDisplay, setIndexOfWordToDisplay] = useState<number>(0);
   const [isDeletingLetter, setIsDeletingLetter] = useState<boolean>(false);
@@ -86,10 +86,10 @@ const Banner = () => {
 
     /** Mimik a person deleting letters */
     if (isDeletingLetter) {
-      if (timeToTransitionToNextLetter > 100)
+      if (timeToTransitionToNextLetter > 50)
         setTimeToTransitionToNextLetter(
           (prevTimeToTransitionToNextLetter) =>
-            prevTimeToTransitionToNextLetter - 100
+            prevTimeToTransitionToNextLetter / 2
         );
     }
 
@@ -114,13 +114,16 @@ const Banner = () => {
   }, [wordToType]);
 
   return (
-    <section className="banner">
+    <section className="banner" id="home">
       <div className="banner__container">
         <div className="banner__about-me">
           <div className="banner__about-me__welcome">{greetings}</div>
           <h1 className="banner__about-me__heading">
             {`I am a `}
-            <span>{wordToType}</span>
+            {/* 
+            // TODO: MAKE SURE TO UNCOMMENT THIS CODE
+            */}
+            {/* <span>{wordToType}</span> */}
           </h1>
           <p className="banner__about-me__description">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam
