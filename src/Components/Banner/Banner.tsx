@@ -1,6 +1,13 @@
 import "./_banner.scss";
-import floatingAstronautImage from "../../assets/img/floating-chirag.png";
-import rightArrow from "../../assets/img/rightArrow.svg";
+// import floatingAstronautImage from "../../assets/img/floating-chirag.png";
+import floatingChiragOther from "../../assets/img/floating-chirag/floating-chirag-other-compressed.png";
+import floatingChiragHeart from "../../assets/img/floating-chirag/floating-chirag-heart.png";
+import floatingChiragMusic from "../../assets/img/floating-chirag/floating-chirag-music.png";
+import floatingChiragChatBubble from "../../assets/img/floating-chirag/floating-chirag-chatBubble.png";
+import floatingChiragChatWithDiamond from "../../assets/img/floating-chirag/floating-chirag-chatWithDiamond.png";
+import React from "react";
+import { RightArrow } from "../../assets/img/ReactComponents/RightArrow";
+
 import { useEffect, useState } from "react";
 const Banner = () => {
   const wordsToRotate = ["Front End Developer", "Problem Solver"];
@@ -64,17 +71,42 @@ const Banner = () => {
             deserunt iusto animi eos.
           </p>
           <button className="banner__about-me__catch-up-button">
-            <span>Lets connect over a cup of coffee</span>{" "}
-            <img
-              src={rightArrow}
+            <span>Let's get coffee </span>{" "}
+            {/* <img
+              src={RightArrow}
               alt=""
               className="banner__about-me__catch-up-button__right-arrow"
-            />
+            /> */}
+            <RightArrow className="banner__about-me__catch-up-button__right-arrow" />
             {/* <ArrowRightCircle className="banner__about-me__catch-up-button__right-arrow" /> */}
           </button>
         </div>
         <div className="banner__floating-chirag">
-          <img src={floatingAstronautImage} alt="Floating Astronaut Image" />
+          <img
+            src={floatingChiragOther}
+            alt="Floating Astronaut Image"
+            className="banner__floating-chirag__other"
+          />
+          <img
+            src={floatingChiragHeart}
+            alt="Floating Astronaut Image"
+            className="banner__floating-chirag__heart"
+          />
+          <img
+            src={floatingChiragMusic}
+            alt="Floating Astronaut Image"
+            className="banner__floating-chirag__music"
+          />
+          <img
+            src={floatingChiragChatBubble}
+            alt="Floating Astronaut Image"
+            className="banner__floating-chirag__chat-bubble"
+          />
+          <img
+            src={floatingChiragChatWithDiamond}
+            alt="Floating Astronaut Image"
+            className="banner__floating-chirag__chat-with-diamond"
+          />
         </div>
       </div>
     </section>

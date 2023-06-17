@@ -9,16 +9,33 @@ $color-primary-dark-1: #0b011a;
 $color-primary-dark-2: #251043;
 
 $color-text-light-1: #ffffff;
-$color-text-light-2: #ffffff;
+$color-text-light-2: $color-primary-light-2;
 
 $color-text-dark: $color-primary-dark-2;
 
-$social-icon-border: 1px solid rgba(255, 255, 255, 0.5);
+// **************************** Other Colors **************************** //
 
-$transition0_3: 0.3s ease-in-out;
+$color-pink-light: #ffd4bc;
+$color-pink-dark: #d57789;
 
+$color-blue-light: #c2e0f4;
+$color-blue-dark: #2d3b98;
+
+$color-green-light: #acddb8;
+$color-green-dark: #387343;
+
+$color-orange-light: #ffd9c0;
+$color-orange-dark: #dd9041;
+
+
+// **************************** Shadows **************************** //
 $shadow-dark: 0 2rem 6rem rgba(0, 0, 0, 0.3);
 $shadow-light: 0 2rem 5rem rgba(0, 0, 0, 0.1);
 $shadow-header: 0 1rem 2rem rgba(0, 0, 0, 0.2);
 $shadow-img: 1rem 1rem 4rem rgba(0, 0, 0, 0.3);
 $shadow-button-dark: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.4);
+
+// **************************** Other Variables **************************** //
+$social-icon-border: 1px solid rgba(255, 255, 255, 0.5);
+
+$transition0_3: 0.3s ease-in-out;

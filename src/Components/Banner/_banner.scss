@@ -1,4 +1,6 @@
 @import "../../AppVariables.scss";
+@import "../../Mixins.scss";
+
 .banner {
   padding: 26rem 0 10rem 0;
   width: 100vw;
@@ -23,11 +25,18 @@
     &__welcome {
       font-weight: 70rem;
       letter-spacing: 0.1rem;
-      background: -webkit-linear-gradient(
-        -90deg,
-        $color-primary-light-1,
-        $color-primary-light-2
+      // background: -webkit-linear-gradient(
+      //   -90deg,
+      //   $color-primary-light-1,
+      //   $color-primary-light-2
+      // );
+      background: radial-gradient(
+        circle at 3.9% 11.3%,
+        rgb(237, 120, 153) 0%,
+        rgb(240, 202, 158) 71.6%,
+        // rgb(249, 238, 221) 99.8%
       );
+
       background-clip: text;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -38,26 +47,77 @@
 
     &__heading {
       padding: 1rem 0;
+      font-size: 4.5rem;
+      letter-spacing: 0.08rem;
     }
     &__description {
       padding: 1rem 0;
+      font-size: 18px;
+      letter-spacing: 0.8px;
+      line-height: 1.5em;
+      width: 96%;
     }
     &__catch-up-button {
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      width: 35%;
+      justify-content: space-around;
+      width: 40%;
+      padding: 1rem 1rem;
+      font-weight: 700;
+      font-size: 1.5rem;
+      border: 1px solid #fff;
+      letter-spacing: 0.8px;
       &__right-arrow {
-        width: 15%;
-        // height: 5%;
+        fill: white;
+        width: 3rem;
+      }
+      &:hover {
+        @include hoverEffects;
       }
     }
   }
 
   &__floating-chirag {
+    @mixin smallIcons {
+      width: 5%;
+      position: relative;
+    }
     width: 40%;
-    img {
+    &__other {
+      // @include smallIcons;
       width: 100%;
+    }
+    &__heart {
+      @include smallIcons;
+      top: -32rem;
+      left: 21rem;
+      animation-name: animation-floating-chirag-heart;
+      animation-duration: 10;
+      animation-iteration-count: infinite;
+      @keyframes animation-floating-chirag-heart {
+        0% {
+          transform: scale(0);
+        }
+        100% {
+          transform: scale(1.5);
+        }
+      }
+    }
+    &__music {
+      @include smallIcons;
+      top: -44rem;
+      left: 41rem;
+    }
+    &__chat-bubble {
+      @include smallIcons;
+      top: -37rem;
+      left: 15rem;
+      width: 9%;
+    }
+    &__chat-with-diamond {
+      @include smallIcons;
+      top: -32rem;
+      left: 29rem;
     }
   }
 }
