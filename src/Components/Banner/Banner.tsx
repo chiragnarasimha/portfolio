@@ -21,7 +21,6 @@ const Banner = () => {
     /** Mimik a person deleting letters */
     if (isDeletingLetter) {
       setTimeToTransitionToNextLetter((prevTimeToTransitionToNextLetter) => {
-        console.log(prevTimeToTransitionToNextLetter);
         prevTimeToTransitionToNextLetter = Math.floor(
           prevTimeToTransitionToNextLetter / 2
         );

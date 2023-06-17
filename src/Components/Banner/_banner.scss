@@ -23,21 +23,14 @@
     &__welcome {
       font-weight: 70rem;
       letter-spacing: 0.1rem;
-      // padding: 0.8rem 1rem;
-      // background: linear-gradient(
-      //   90.21deg,
-      //   rgba(170, 54, 124, 0.5) -5.91%,
-      //   rgba(74, 47, 189, 0.5) 111.58%
-      // );
-      // background: linear-gradient(-45deg, #0b011a, #251043);
-      // background: linear-gradient(-90deg, #a178b9, #cc8bf2);
-      // background-clip: text;
-      // fill: transparent;
-
-      background: -webkit-linear-gradient(-90deg, #a178b9, #cc8bf2);
+      background: -webkit-linear-gradient(
+        -90deg,
+        $color-primary-light-1,
+        $color-primary-light-2
+      );
+      background-clip: text;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-
       width: fit-content;
       // border: 1px solid rgba(255, 255, 255, 0.5);
       font-size: 3rem;
