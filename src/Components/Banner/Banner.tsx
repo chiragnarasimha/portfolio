@@ -5,11 +5,70 @@ import floatingChiragHeart from "../../assets/img/floating-chirag/floating-chira
 import floatingChiragMusic from "../../assets/img/floating-chirag/floating-chirag-music.png";
 import floatingChiragChatBubble from "../../assets/img/floating-chirag/floating-chirag-chatBubble.png";
 import floatingChiragChatWithDiamond from "../../assets/img/floating-chirag/floating-chirag-chatWithDiamond.png";
+import React from "react";
 import { RightArrow } from "../../assets/img/ReactComponents/RightArrow";
 
 import { useEffect, useState } from "react";
 const Banner = () => {
-  const wordsToRotate = ["Front End Developer", "Problem Solver"];
+  /** This is how to animate the greeting message */
+  const letters =
+    "!@#$%^&*(),./\\[]|{}-_=+`1234567890abcdefghijklmnopqrstuvwxyz";
+  const [greetingsIterator, setGreetingsIterator] = useState(0);
+  const [greetings, setGreetings] = useState("");
+
+  const fullGreetingMessage = "Welcome! I am Chirag";
+  const fullGreetingMessageLength = fullGreetingMessage.length;
+  const decryptionAnimationSpeed = 0.2;
+  const tick2 = () => {
+    let updatedWord = fullGreetingMessage
+      .split("")
+      .map((letter, index) => {
+        if (index < greetingsIterator) {
+          return letter;
+        }
+
+        return letters[Math.floor(Math.random() * letters.length)];
+      })
+      .join("");
+    if (greetingsIterator >= fullGreetingMessageLength) {
+      setGreetingsIterator(0);
+    } else {
+      if (greetingsIterator < 1) {
+        setGreetingsIterator(1);
+      }
+      setGreetingsIterator(
+        (prevGreetingsIterator) =>
+          prevGreetingsIterator + decryptionAnimationSpeed
+      );
+      // Guard Clause to ensure that, once the last letter has been typed, there is no more calls to this function
+      if (
+        greetingsIterator > fullGreetingMessageLength - 1 &&
+        greetingsIterator <= fullGreetingMessageLength
+      ) {
+        setGreetingsIterator(fullGreetingMessageLength + 1);
+      }
+    }
+    setGreetings(updatedWord);
+  };
+
+  useEffect(() => {
+    // This if statement will ensure that there is no infinite setInterval calls
+    if (greetingsIterator <= fullGreetingMessageLength) {
+      const iterator = setInterval(() => {
+        tick2();
+      }, 70);
+      return () => {
+        clearInterval(iterator);
+      };
+    }
+  }, [greetings]);
+
+  /** This is how to emulate typing */
+  const wordsToRotate = [
+    "SOFTWARE ENGINEER",
+    "FRONT END DEVELOPER",
+    "PROBLEM SOLVER",
+  ];
   const [indexOfWordToDisplay, setIndexOfWordToDisplay] = useState<number>(0);
   const [isDeletingLetter, setIsDeletingLetter] = useState<boolean>(false);
   const [wordToType, setWordToType] = useState<string>("");
@@ -57,7 +116,7 @@ const Banner = () => {
     <section className="banner">
       <div className="banner__container">
         <div className="banner__about-me">
-          <div className="banner__about-me__welcome">Welcome! I am Chirag</div>
+          <div className="banner__about-me__welcome">{greetings}</div>
           <h1 className="banner__about-me__heading">
             {`I am a `}
             <span>{wordToType}</span>
@@ -80,6 +139,10 @@ const Banner = () => {
           </button>
         </div>
         <div className="banner__floating-chirag">
+          {/* 
+          
+          // TODO: This is a future enhancement. Animate each individual asses, instead of the whole image.  
+          
           <img
             src={floatingChiragOther}
             alt="Floating Astronaut Image"
@@ -102,6 +165,12 @@ const Banner = () => {
           />
           <img
             src={floatingChiragChatWithDiamond}
+            alt="Floating Astronaut Image"
+            className="banner__floating-chirag__chat-with-diamond"
+          /> */}
+
+          <img
+            src={floatingChiragOther}
             alt="Floating Astronaut Image"
             className="banner__floating-chirag__chat-with-diamond"
           />
