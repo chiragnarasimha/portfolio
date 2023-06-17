@@ -1,28 +1,42 @@
-import { ArrowRightCircle } from "react-bootstrap-icons";
 import "./_banner.scss";
 import floatingAstronautImage from "../../assets/img/floating-chirag.png";
 import rightArrow from "../../assets/img/rightArrow.svg";
 import { useEffect, useState } from "react";
 const Banner = () => {
-  const [loopNum, setLoopNum] = useState(0);
-  const [isDeleting, setIsDeleting] = useState(false);
   const wordsToRotate = ["Front End Developer", "Problem Solver"];
-  const [wordToType, setWordToType] = useState("");
-  const [timeToTransitionToNextLetter, settimeToTransitionToNextLetter] =
-    useState(3 - Math.random() * 100);
+  const [indexOfWordToDisplay, setIndexOfWordToDisplay] = useState<number>(0);
+  const [isDeletingLetter, setIsDeletingLetter] = useState<boolean>(false);
+  const [wordToType, setWordToType] = useState<string>("");
+  const [timeToTransitionToNextLetter, setTimeToTransitionToNextLetter] =
+    useState<number>(300 - Math.random() * 100);
   const timeToTransitionToNewWord = 2000;
 
   const tick = () => {
-    let i = loopNum % wordsToRotate.length;
-    let word = wordsToRotate[i];
-    let updatedWord = isDeleting
-      ? word.substring(0, word.length - 1)
-      : word.substring(0, word.length);
-    setWordToType(
-      isDeleting
-        ? word.substring(0, word.length - 1)
-        : word.substring(0, word.length)
-    );
+    let word = wordsToRotate[indexOfWordToDisplay % wordsToRotate.length];
+    let updatedWord = isDeletingLetter
+      ? word.substring(0, wordToType.length - 1)
+      : word.substring(0, wordToType.length + 1);
+    setWordToType(updatedWord);
+
+    /** Mimik a person deleting letters */
+    if (isDeletingLetter) {
+      setTimeToTransitionToNextLetter((prevTimeToTransitionToNextLetter) => {
+        console.log(prevTimeToTransitionToNextLetter);
+        prevTimeToTransitionToNextLetter = Math.floor(
+          prevTimeToTransitionToNextLetter / 2
+        );
+        return prevTimeToTransitionToNextLetter;
+      });
+    }
+
+    if (!isDeletingLetter && updatedWord === word) {
+      setIsDeletingLetter(true);
+      setTimeToTransitionToNextLetter(timeToTransitionToNewWord);
+    } else if (isDeletingLetter && updatedWord === ``) {
+      setIsDeletingLetter(false);
+      setIndexOfWordToDisplay(indexOfWordToDisplay + 1);
+      setTimeToTransitionToNextLetter(200);
+    }
   };
 
   useEffect(() => {
@@ -42,7 +56,7 @@ const Banner = () => {
           <div className="banner__about-me__welcome">Welcome! I am Chirag</div>
           <h1 className="banner__about-me__heading">
             {`I am a `}
-            <span>Front End Developer</span>
+            <span>{wordToType}</span>
           </h1>
           <p className="banner__about-me__description">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam
