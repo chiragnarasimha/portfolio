@@ -83,41 +83,45 @@
       position: relative;
     }
     width: 40%;
-    &__other {
-      // @include smallIcons;
+    &__original {
       width: 100%;
     }
-    &__heart {
-      @include smallIcons;
-      top: -32rem;
-      left: 21rem;
-      animation-name: animation-floating-chirag-heart;
-      animation-duration: 10;
-      animation-iteration-count: infinite;
-      @keyframes animation-floating-chirag-heart {
-        0% {
-          transform: scale(0);
-        }
-        100% {
-          transform: scale(1.5);
-        }
-      }
-    }
-    &__music {
-      @include smallIcons;
-      top: -44rem;
-      left: 41rem;
-    }
-    &__chat-bubble {
-      @include smallIcons;
-      top: -37rem;
-      left: 15rem;
-      width: 9%;
-    }
-    &__chat-with-diamond {
-      @include smallIcons;
-      top: -32rem;
-      left: 29rem;
-    }
+
+    //   &__other {
+    //     // @include smallIcons;
+    //     width: 100%;
+    //   }
+    //   &__heart {
+    //     @include smallIcons;
+    //     top: -32rem;
+    //     left: 21rem;
+    //     animation-name: animation-floating-chirag-heart;
+    //     animation-duration: 10;
+    //     animation-iteration-count: infinite;
+    //     @keyframes animation-floating-chirag-heart {
+    //       0% {
+    //         transform: scale(0);
+    //       }
+    //       100% {
+    //         transform: scale(1.5);
+    //       }
+    //     }
+    //   }
+    //   &__music {
+    //     @include smallIcons;
+    //     top: -44rem;
+    //     left: 41rem;
+    //   }
+    //   &__chat-bubble {
+    //     @include smallIcons;
+    //     top: -37rem;
+    //     left: 15rem;
+    //     width: 9%;
+    //   }
+    //   &__chat-with-diamond {
+    //     @include smallIcons;
+    //     top: -32rem;
+    //     left: 29rem;
+    //   }
   }
 }

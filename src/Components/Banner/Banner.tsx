@@ -1,11 +1,12 @@
 import "./_banner.scss";
 // import floatingAstronautImage from "../../assets/img/floating-chirag.png";
-import floatingChiragOther from "../../assets/img/floating-chirag/floating-chirag-other-compressed.png";
-import floatingChiragHeart from "../../assets/img/floating-chirag/floating-chirag-heart.png";
-import floatingChiragMusic from "../../assets/img/floating-chirag/floating-chirag-music.png";
-import floatingChiragChatBubble from "../../assets/img/floating-chirag/floating-chirag-chatBubble.png";
-import floatingChiragChatWithDiamond from "../../assets/img/floating-chirag/floating-chirag-chatWithDiamond.png";
-import React from "react";
+// import floatingChiragOther from "../../assets/img/floating-chirag/floating-chirag-other-compressed.png";
+// import floatingChiragHeart from "../../assets/img/floating-chirag/floating-chirag-heart.png";
+// import floatingChiragMusic from "../../assets/img/floating-chirag/floating-chirag-music.png";
+// import floatingChiragChatBubble from "../../assets/img/floating-chirag/floating-chirag-chatBubble.png";
+// import floatingChiragChatWithDiamond from "../../assets/img/floating-chirag/floating-chirag-chatWithDiamond.png";
+import floatingChiragOriginal from "../../assets/img/floating-chirag/floating-chirag-original.png";
+
 import { RightArrow } from "../../assets/img/ReactComponents/RightArrow";
 
 import { useEffect, useState } from "react";
@@ -170,9 +171,9 @@ const Banner = () => {
           /> */}
 
           <img
-            src={floatingChiragOther}
+            src={floatingChiragOriginal}
             alt="Floating Astronaut Image"
-            className="banner__floating-chirag__chat-with-diamond"
+            className="banner__floating-chirag__original"
           />
         </div>
       </div>
