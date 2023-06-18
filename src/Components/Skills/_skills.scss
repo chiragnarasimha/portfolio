@@ -3,6 +3,8 @@
 .skills {
   width: 100vw;
 
+  margin-bottom: 10rem;
+
   &__heading {
     @include horizontalCenter;
     margin-bottom: 5rem;

@@ -68,6 +68,21 @@
   transform: scale(1.2);
 }
 
+@mixin hoverEffectProjectImages {
+  // background: radial-gradient(
+  //   circle at 1.2% 5%,
+  //   rgb(255, 94, 157) 34.7%,
+  //   rgb(255, 78, 6) 92.3%
+  // );
+  background: linear-gradient(
+    to bottom right,
+    rgb(250, 112, 154) 0%,
+    rgb(254, 225, 64) 100%
+  );
+  background-size: 400% 400%;
+  animation: gradient 3s ease infinite;
+}
+
 @mixin gradientEffectText {
   background: linear-gradient(to right, #ed7899, #f0ca9e, #ec537f, #ed7899);
   background-clip: text;
@@ -82,7 +97,7 @@
 }
 
 @mixin hoverEffectsBackgroundFill {
-  background: linear-gradient(to top left, #392657 0%, #392657 80%);
+  background: linear-gradient(to top left, #231836 0%, #392657 80%);
 }
 
 @keyframes gradient {

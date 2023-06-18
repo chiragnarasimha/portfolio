@@ -1,2 +1,64 @@
 @import "../../AppVariables.scss";
 @import "../../Mixins.scss";
+
+.project {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__container {
+    // @include horizontalCenter();
+    width: 80%;
+  }
+  &__header {
+    @include horizontalCenter();
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 5rem;
+  }
+
+  &__items {
+    &__container {
+      display: flex;
+      justify-content: space-between;
+    }
+    &__item {
+      width: 30%;
+      border-radius: 2rem;
+      overflow: hidden;
+      transition: all 0.3s linear;
+
+      &:hover {
+        border: 1rem solid rgba(255, 255, 255, 0.575);
+        @include hoverEffectProjectImages();
+      }
+      &__img {
+        transition: all 0.3s linear;
+        &:hover {
+          transform: scale(1.2);
+          opacity: 0.1;
+        }
+      }
+
+      &__description {
+        // position: relative;
+        // @include absoluteCenter();
+        z-index: 90;
+        &::before {
+          content: "";
+        }
+        &__container {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+        &__heading {
+          font-size: 2rem;
+        }
+
+        &__description-text {
+        }
+      }
+    }
+  }
+}

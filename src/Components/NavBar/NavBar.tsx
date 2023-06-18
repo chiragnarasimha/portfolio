@@ -27,7 +27,7 @@ const NavBar = () => {
     const location = document.querySelector(target).offsetTop;
     window.scrollTo({
       left: 0,
-      top: location - 200,
+      top: location - 150,
     });
   };
 
