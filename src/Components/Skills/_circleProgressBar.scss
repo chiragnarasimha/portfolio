@@ -24,14 +24,13 @@ $greyDark: #646b8c;
       display: flex;
       justify-content: center;
       align-items: center;
-      margin-bottom: 6rem;
+      margin-bottom: 1rem;
     }
 
     &__number {
       position: absolute;
       color: $greyDark;
       font-size: 3.6rem;
-      font-family: "DM Sans", sans-serif;
     }
 
     &__description {
@@ -41,15 +40,14 @@ $greyDark: #646b8c;
       text-align: center;
 
       h2 {
-        font-size: 1.8rem;
-        font-family: "DM Sans", sans-serif;
+        font-size: 2rem;
         letter-spacing: 1.2px;
         margin-bottom: 1rem;
         @include hoverEffectText();
       }
       p {
         font-size: 1.4rem;
-        color: $greyDark;
+        color: $color-text-light-1;
       }
     }
   }

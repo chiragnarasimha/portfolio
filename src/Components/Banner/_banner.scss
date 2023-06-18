@@ -40,7 +40,7 @@
     }
     &__description {
       padding: 1rem 0;
-      font-size: 18px;
+      font-size: 1.8rem;
       letter-spacing: 0.8px;
       line-height: 1.5em;
       width: 96%;
@@ -81,7 +81,7 @@
         transform: scale(1.1);
         border: 1rem solid rgba(255, 255, 255, 0.575);
         border-radius: 2rem;
-        @include hoverEffectsSVG();
+        @include hoverEffectsBackgroundFill();
       }
     }
 
