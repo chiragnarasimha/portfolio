@@ -11,13 +11,11 @@ $greyDark: #646b8c;
 
 .circle-progress-bar {
   &__container {
-    width: 25rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     border-radius: 2rem;
-    padding: 5rem;
 
     &__percent {
       position: relative;

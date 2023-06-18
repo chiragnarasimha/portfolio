@@ -21,7 +21,6 @@ const CircleProgressBar = ({
   };
   useEffect(() => {
     changePercentage(inputPercentage);
-    return () => {};
   }, [inputPercentage]);
 
   return (
@@ -31,9 +30,9 @@ const CircleProgressBar = ({
           <svg className="circle-progress-bar__svg">
             <defs>
               <linearGradient id="circle-progress-bar__gradient">
-                <stop offset="0%" stop-color="#ec537f" />
-                <stop offset="50%" stop-color="#ed7899" />
-                <stop offset="100%" stop-color="#f0ca9e" />
+                <stop offset="0%" stopColor="#ec537f" />
+                <stop offset="50%" stopColor="#ed7899" />
+                <stop offset="100%" stopColor="#f0ca9e" />
               </linearGradient>
             </defs>
             <circle
@@ -58,10 +57,6 @@ const CircleProgressBar = ({
         </div>
         <div className="circle-progress-bar__container__description">
           <h2>{skillName}</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta
-            cumque vitae iure voluptatem alias sed facilis quidem.
-          </p>
         </div>
       </div>
     </div>

@@ -20,9 +20,24 @@ const NavBar = () => {
     };
   }, []);
 
-  // const onUpdateActiveLink = (linkName: string) => {
-  //   setActiveLink(linkName);
-  // };
+  const handleClick = (event: any) => {
+    console.log(event);
+    event.preventDefault();
+    const target = event.target.getAttribute("href");
+    const location = document.querySelector(target).offsetTop;
+    window.scrollTo({
+      left: 0,
+      top: location - 350,
+    });
+  };
+
+  const onUpdateActiveLink = (
+    linkName: string,
+    event: React.MouseEvent<HTMLAnchorElement>
+  ) => {
+    setActiveLink(linkName);
+    handleClick(event);
+  };
 
   return (
     <nav className={`navbar${scrolled ? " navbar__scrolled" : ""}`}>
@@ -35,8 +50,9 @@ const NavBar = () => {
           <a
             href="#home"
             className={`${activeLink === "home" ? "active " : ""}navbar__link`}
-            onClick={() => {
-              setActiveLink("home");
+            onClick={(event) => {
+              onUpdateActiveLink("home", event);
+              // handleClick;
             }}
           >
             Home
@@ -46,8 +62,8 @@ const NavBar = () => {
             className={`${
               activeLink === "skills" ? "active " : ""
             }navbar__link`}
-            onClick={() => {
-              setActiveLink("skills");
+            onClick={(event) => {
+              onUpdateActiveLink("skills", event);
             }}
           >
             Skills
@@ -57,8 +73,8 @@ const NavBar = () => {
             className={`${
               activeLink === "projects" ? "active " : ""
             }navbar__link`}
-            onClick={() => {
-              setActiveLink("projects");
+            onClick={(event) => {
+              onUpdateActiveLink("projects", event);
             }}
           >
             Projects
