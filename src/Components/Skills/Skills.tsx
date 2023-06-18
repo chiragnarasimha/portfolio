@@ -47,6 +47,7 @@ const Skills = () => {
   return (
     <section id="skills" className="skills">
       <div className="skills__container">
+        <h1 className="skills__heading">SKILLS</h1>
         <div className="skills__container__carousel">
           <Carousel
             responsive={responsive}
