@@ -21,7 +21,7 @@ const Banner = () => {
   const fullGreetingMessageLength = fullGreetingMessage.length;
   const decryptionAnimationSpeed = 0.4;
   const tick2 = () => {
-    let updatedWord = fullGreetingMessage
+    const updatedWord = fullGreetingMessage
       .split("")
       .map((letter, index) => {
         if (index < greetingsIterator) {
@@ -120,10 +120,7 @@ const Banner = () => {
           <div className="banner__about-me__welcome">{greetings}</div>
           <h1 className="banner__about-me__heading">
             {`I am a `}
-            {/* 
-            // TODO: MAKE SURE TO UNCOMMENT THIS CODE
-            */}
-            {/* <span>{wordToType}</span> */}
+            <span>{wordToType}</span>
           </h1>
           <p className="banner__about-me__description">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam
@@ -133,20 +130,12 @@ const Banner = () => {
           </p>
           <button className="banner__about-me__catch-up-button">
             <span>Let's get coffee </span>{" "}
-            {/* <img
-              src={RightArrow}
-              alt=""
-              className="banner__about-me__catch-up-button__right-arrow"
-            /> */}
             <RightArrow className="banner__about-me__catch-up-button__right-arrow" />
-            {/* <ArrowRightCircle className="banner__about-me__catch-up-button__right-arrow" /> */}
           </button>
         </div>
         <div className="banner__floating-chirag">
           {/* 
-          
           // TODO: This is a future enhancement. Animate each individual asses, instead of the whole image.  
-          
           <img
             src={floatingChiragOther}
             alt="Floating Astronaut Image"

@@ -49,11 +49,7 @@ const Skills = () => {
       <div className="skills__container">
         <h1 className="skills__heading">SKILLS</h1>
         <div className="skills__container__carousel">
-          <Carousel
-            responsive={responsive}
-            // infinite={true}
-            className="owl-carousel owl-theme"
-          >
+          <Carousel responsive={responsive} className="owl-carousel owl-theme">
             {skillsList.map((skill, index) => (
               <CircleProgressBar
                 key={`${skill.skillName} ${index}`}

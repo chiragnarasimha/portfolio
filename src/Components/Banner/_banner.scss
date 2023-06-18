@@ -18,7 +18,6 @@
     flex-direction: column;
     position: relative;
     min-height: 100%;
-    // width: 100%;
     gap: 2rem;
     width: 35%;
 
@@ -27,16 +26,17 @@
       letter-spacing: 0.1rem;
       @include hoverEffectText();
       animation-duration: 5s;
-
       width: fit-content;
-      // border: 1px solid rgba(255, 255, 255, 0.5);
       font-size: 3rem;
+      margin-bottom: 3rem;
     }
 
     &__heading {
       padding: 1rem 0;
       font-size: 4rem;
       letter-spacing: 0.08rem;
+      height: 13rem;
+      // line-height: 3rem;
     }
     &__description {
       padding: 1rem 0;
@@ -74,7 +74,6 @@
     &__original {
       width: 100%;
       position: relative;
-      // animation: imgUpDown 2s linear infinite;
       padding: 1rem 1rem;
       transition: $transition0_3;
       &:hover {
