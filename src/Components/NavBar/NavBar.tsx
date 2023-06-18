@@ -20,14 +20,14 @@ const NavBar = () => {
     };
   }, []);
 
-  const handleClick = (event: any) => {
+  const handleClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
     console.log(event);
     event.preventDefault();
     const target = event.target.getAttribute("href");
     const location = document.querySelector(target).offsetTop;
     window.scrollTo({
       left: 0,
-      top: location - 350,
+      top: location - 200,
     });
   };
 
