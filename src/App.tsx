@@ -14,8 +14,8 @@ function App() {
         <Banner />
         <Skills />
         <Project />
-        <ContactForm />
-        <section className="app__container__TEST_DIV">TEST</section>
+        {/* <ContactForm />
+        <section className="app__container__TEST_DIV">TEST</section> */}
       </main>
     </>
   );

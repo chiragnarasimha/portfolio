@@ -36,7 +36,7 @@ body {
   overflow-x: hidden;
   background-size: cover;
   background-repeat: no-repeat;
-  background-color: $color-grey-dark-1;
+  background-color: black;
   color: $color-text-light-1;
 }
 h1,
@@ -99,6 +99,7 @@ button {
 
     min-height: 100vh;
     min-width: 100vw;
+    margin-bottom: 10rem;
 
     &__body {
       @include horizontalCenter();

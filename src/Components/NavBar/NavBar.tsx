@@ -93,12 +93,12 @@ const NavBar = () => {
               <img src={navSocialIconLn} alt="" />
             </a>
           </div>
-          <button
+          {/* <button
             className="navbar__contact__button"
             onClick={() => console.log("Contact Me")}
           >
             <span>Contact Me</span>
-          </button>
+          </button> */}
         </span>
       </div>
     </nav>

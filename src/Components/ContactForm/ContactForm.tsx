@@ -1,3 +1,4 @@
+import { Valentine } from "react-bootstrap-icons";
 import "./_contactForm.scss";
 
 import React, { useState } from "react";
@@ -18,8 +19,9 @@ const ContactForm = () => {
   };
   const onFormUpdate = (fieldName: string, value: string) => {
     setFormDetails({
-        
-    })
+      ...formDetails,
+      [fieldName]: value,
+    });
   };
   return (
     <section className="section" id="contactMeForm">
