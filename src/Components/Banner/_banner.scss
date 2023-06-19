@@ -2,9 +2,19 @@
 @import "../../Mixins.scss";
 
 .banner {
-  padding: 26rem 0 10rem 0;
   width: 100vw;
+  min-height: 100vh;
   margin-bottom: 10rem;
+  padding-top: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  opacity: 0;
+  transition: all 0.3s linear;
+  &__visible {
+    opacity: 1;
+  }
 
   &__container {
     display: flex;

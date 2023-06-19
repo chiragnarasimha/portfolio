@@ -1,3 +1,4 @@
+import useVisibleElement from "../Hooks/useVisibleElement";
 import CircleProgressBar from "./CircleProgressBar";
 import "./_skills.scss";
 import Carousel from "react-multi-carousel";
@@ -43,9 +44,19 @@ const responsive = {
     items: 1,
   },
 };
+
 const Skills = () => {
+  const [sectionRef, sectionVisible] = useVisibleElement({
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.5,
+  });
   return (
-    <section id="skills" className="skills">
+    <section
+      id="skills"
+      className={`skills ${sectionVisible ? "skills__visible" : ""}`}
+      ref={sectionRef}
+    >
       <div className="skills__container">
         <h1 className="skills__heading">SKILLS</h1>
         <div className="skills__container__carousel">

@@ -3,6 +3,7 @@ import chiflixImage from "../../assets/img/project-images/chiflix.jpg";
 import natoursImage from "../../assets/img/project-images/natours.jpg";
 import samsSushi from "../../assets/img/project-images/samsSushi.jpg";
 import { useRef, useState } from "react";
+import useVisibleElement from "../Hooks/useVisibleElement";
 const projectList = [
   {
     title: `Chiflix`,
@@ -24,18 +25,17 @@ const projectList = [
   },
 ];
 const Project = () => {
-  const projectItemRef = useRef<HTMLDivElement>(null);
-
-  const [isHovering, setIsHovering] = useState<boolean>(false);
-  const handleMouseEnter = () => {
-    setIsHovering(true);
-  };
-
-  const handleMouseLeave = () => {
-    setIsHovering(false);
-  };
+  const [sectionRef, sectionVisible] = useVisibleElement({
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.5,
+  });
   return (
-    <section className="project" id="projects">
+    <section
+      className={`project ${sectionVisible ? "project__visible" : ""}`}
+      id="projects"
+      ref={sectionRef}
+    >
       <div className="project__container">
         <h1 className="project__header">Projects</h1>
         <div className="project__items__container">
@@ -43,9 +43,6 @@ const Project = () => {
             <div
               className="project__items__item"
               key={`${project.title} ${index}`}
-              ref={projectItemRef}
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
             >
               <img
                 src={project.imgSrc}
@@ -62,9 +59,10 @@ const Project = () => {
                   </p>
                   <a
                     href={project.link}
+                    className="project__items__item__description__link-to-project"
                     target="_blank"
                     rel="noopener noreferrer"
-                  >{`Live Demo >`}</a>
+                  >{`Live Demo`}</a>
                 </div>
               </div>
             </div>

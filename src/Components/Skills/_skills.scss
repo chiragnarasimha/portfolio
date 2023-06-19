@@ -2,8 +2,12 @@
 @import "../../Mixins.scss";
 .skills {
   width: 100vw;
-
   margin-bottom: 10rem;
+  opacity: 0.5;
+  transition: all 0.3s linear;
+  &__visible {
+    opacity: 1;
+  }
 
   &__heading {
     @include horizontalCenter;

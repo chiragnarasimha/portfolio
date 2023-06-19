@@ -67,21 +67,11 @@
   @include hoverEffectText();
   transform: scale(1.2);
 }
-
-@mixin hoverEffectProjectImages {
-  // background: radial-gradient(
-  //   circle at 1.2% 5%,
-  //   rgb(255, 94, 157) 34.7%,
-  //   rgb(255, 78, 6) 92.3%
-  // );
-  // background: linear-gradient(
-  //   to bottom right,
-  //   rgb(250, 112, 154) 0%,
-  //   rgb(254, 225, 64) 100%
-  // );
-  // background-size: 400% 400%;
-  // animation: gradient 3s ease infinite;
-  background: black;
+@mixin hoverEffectsLink2 {
+  @include gradientEffectText2();
+  background-size: 200%;
+  animation: gradientText 3s linear infinite;
+  transform: scale(1.2);
 }
 
 @mixin gradientEffectText {
@@ -89,6 +79,20 @@
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+@mixin gradientEffectText2 {
+  background: linear-gradient(
+    to right,
+    $color-textGradient-purple,
+    $color-textGradient-voilet,
+    $color-textGradient-voilet-light,
+    $color-textGradient-purple
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 @mixin hoverEffectText {

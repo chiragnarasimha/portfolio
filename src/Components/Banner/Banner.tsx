@@ -1,15 +1,18 @@
 import "./_banner.scss";
+/**
+ * TODO: This is an enhancement feature. 
 // import floatingAstronautImage from "../../assets/img/floating-chirag.png";
 // import floatingChiragOther from "../../assets/img/floating-chirag/floating-chirag-other-compressed.png";
 // import floatingChiragHeart from "../../assets/img/floating-chirag/floating-chirag-heart.png";
 // import floatingChiragMusic from "../../assets/img/floating-chirag/floating-chirag-music.png";
 // import floatingChiragChatBubble from "../../assets/img/floating-chirag/floating-chirag-chatBubble.png";
 // import floatingChiragChatWithDiamond from "../../assets/img/floating-chirag/floating-chirag-chatWithDiamond.png";
+ */
 import floatingChiragOriginal from "../../assets/img/floating-chirag/floating-chirag-original-compressed.png";
-
 import { RightArrow } from "../../assets/img/ReactComponents/RightArrow";
+import { useEffect, useRef, useState } from "react";
+import useVisibleElement from "../Hooks/useVisibleElement";
 
-import { useEffect, useState } from "react";
 const Banner = () => {
   /** This is how to animate the greeting message */
   const letters =
@@ -113,8 +116,21 @@ const Banner = () => {
     };
   }, [wordToType]);
 
+  /**
+   * RENDER THE ELEMENT ONLY IF IT IS IN VIEWPORT
+   */
+  const [sectionRef, sectionRefVisible] = useVisibleElement({
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.5,
+  });
+
   return (
-    <section className="banner" id="home">
+    <section
+      className={`banner ${sectionRefVisible ? "banner__visible" : ""}`}
+      id="home"
+      ref={sectionRef}
+    >
       <div className="banner__container">
         <div className="banner__about-me">
           <div className="banner__about-me__welcome">{greetings}</div>

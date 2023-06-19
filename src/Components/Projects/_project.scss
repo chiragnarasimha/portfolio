@@ -7,6 +7,11 @@
   justify-content: center;
   align-items: center;
   margin-bottom: 10rem;
+  opacity: 0.5;
+  transition: all 0.3s linear;
+  &__visible {
+    opacity: 1;
+  }
   &__container {
     // @include horizontalCenter();
     width: 80%;
@@ -95,11 +100,22 @@
           padding: 2rem;
         }
         &__heading {
-          font-size: 2rem;
+          font-size: 3rem;
         }
 
         &__description-text {
-          font-size: 1.2rem;
+          padding: 2rem 5rem;
+          font-size: 1.7rem;
+        }
+
+        &__link-to-project {
+          text-decoration: none;
+          font-size: 2rem;
+          transition: all 0.3s linear;
+          color: black;
+          &:hover {
+            @include hoverEffectsLink2();
+          }
         }
       }
     }
