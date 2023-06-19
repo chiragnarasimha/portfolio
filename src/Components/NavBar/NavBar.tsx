@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import navSocialIconFB from "../../assets/img/nav-social-icon-fb.svg";
 import navSocialIconInsta from "../../assets/img/nav-social-icon-insta.svg";
 import navSocialIconLn from "../../assets/img/nav-social-icon-ln.svg";
+import chiragLogo from "../../assets/img/ChiragLogo.svg";
 
 const NavBar = () => {
   const [activeLink, setActiveLink] = useState<string>("home");
@@ -43,8 +44,8 @@ const NavBar = () => {
     <nav className={`navbar${scrolled ? " navbar__scrolled" : ""}`}>
       <div id="basic-navbar-nav" className="navbar__container">
         <a href="#home" className={"navbar__logo"}>
-          {/* <img src={logo} alt="Logo" /> */}
-          CNM
+          <img src={chiragLogo} alt="Logo" />
+          {/* CNM */}
         </a>
         <div className="navbar__links">
           <a

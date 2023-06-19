@@ -1,1 +1,13 @@
 @import "../../AppVariables.scss";
+@import "../../Mixins.scss";
+
+.section {
+  &__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__form{
+    
+  }
+}

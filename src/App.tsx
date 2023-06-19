@@ -1,5 +1,6 @@
 import "./App.scss";
 import Banner from "./Components/Banner/Banner.tsx";
+import ContactForm from "./Components/ContactForm/ContactForm.tsx";
 import NavBar from "./Components/NavBar/NavBar.tsx";
 import Project from "./Components/Projects/Project.tsx";
 
@@ -13,6 +14,7 @@ function App() {
         <Banner />
         <Skills />
         <Project />
+        <ContactForm />
         <section className="app__container__TEST_DIV">TEST</section>
       </main>
     </>
