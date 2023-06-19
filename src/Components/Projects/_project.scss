@@ -6,18 +6,21 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 10rem;
   &__container {
     // @include horizontalCenter();
     width: 80%;
   }
   &__header {
-    @include horizontalCenter();
+    // @include horizontalCenter();
     text-align: center;
     font-size: 3rem;
     margin-bottom: 5rem;
   }
 
   &__items {
+    height: 20vh;
+    backface-visibility: hidden;
     &__container {
       display: flex;
       justify-content: space-between;
@@ -25,38 +28,78 @@
     &__item {
       width: 30%;
       border-radius: 2rem;
+      height: 80%;
+
       overflow: hidden;
       transition: all 0.3s linear;
-
-      &:hover {
-        border: 1rem solid rgba(255, 255, 255, 0.575);
-        @include hoverEffectProjectImages();
+      position: relative;
+      &:hover,
+      &:focus,
+      &:active {
+        .project__items__item__img {
+          transform: scale(1.1);
+          transition: all 0.3s linear;
+          filter: blur(1rem);
+        }
       }
+
+      &:hover,
+      &:focus,
+      &:active {
+        .project__items__item__description {
+          visibility: visible;
+          opacity: 1;
+          min-height: 100%;
+          transition: all 0.3 linear;
+          position: absolute;
+          top: 0;
+          left: 0;
+          transform: scale(1);
+          filter: blur(0rem);
+        }
+      }
+
       &__img {
         transition: all 0.3s linear;
-        &:hover {
-          transform: scale(1.2);
-          opacity: 0.1;
-        }
       }
 
       &__description {
-        // position: relative;
-        // @include absoluteCenter();
-        z-index: 90;
-        &::before {
-          content: "";
-        }
+        background-image: linear-gradient(
+          to bottom right,
+          rgba(250, 112, 154, 70%) 0%,
+          rgba(254, 225, 64, 70%) 100%
+        );
+        color: black;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        opacity: 0;
+        min-height: 100%;
+        max-height: 0;
+        opacity: 0;
+        -webkit-transition: all 0.3s linear;
+        transition: all 0.3s linear;
+        visibility: hidden;
+        // transform: scale(1.05);
+        filter: blur(1rem);
+
         &__container {
+          //   transition: all 0.3 linear 0.15s;
+
           display: flex;
           flex-direction: column;
           align-items: center;
+          width: 100%;
+          height: 100%;
+          gap: 2rem;
+          padding: 2rem;
         }
         &__heading {
           font-size: 2rem;
         }
 
         &__description-text {
+          font-size: 1.2rem;
         }
       }
     }

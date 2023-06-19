@@ -60,9 +60,11 @@
         fill: white;
         width: 3rem;
       }
+      position: relative;
       &:hover {
-        @include hoverEffects;
+        // @include hoverEffects;
       }
+      @include hoverEffectsButton();
     }
   }
 

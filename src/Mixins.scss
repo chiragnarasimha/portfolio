@@ -74,13 +74,14 @@
   //   rgb(255, 94, 157) 34.7%,
   //   rgb(255, 78, 6) 92.3%
   // );
-  background: linear-gradient(
-    to bottom right,
-    rgb(250, 112, 154) 0%,
-    rgb(254, 225, 64) 100%
-  );
-  background-size: 400% 400%;
-  animation: gradient 3s ease infinite;
+  // background: linear-gradient(
+  //   to bottom right,
+  //   rgb(250, 112, 154) 0%,
+  //   rgb(254, 225, 64) 100%
+  // );
+  // background-size: 400% 400%;
+  // animation: gradient 3s ease infinite;
+  background: black;
 }
 
 @mixin gradientEffectText {
@@ -98,6 +99,34 @@
 
 @mixin hoverEffectsBackgroundFill {
   background: linear-gradient(to top left, #231836 0%, #392657 80%);
+}
+
+@mixin hoverEffectsButton {
+  background-color: transparent;
+  transition: $transition0_3;
+  position: relative;
+  &::before {
+    content: "";
+    width: 0%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    background-color: $color-white;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    transition: $transition0_3;
+  }
+
+  &:hover {
+    color: $color-grey-dark-1;
+    &::before {
+      content: "";
+      width: 100%;
+      height: 100%;
+      top: 0;
+    }
+  }
 }
 
 @keyframes gradient {
@@ -123,7 +152,4 @@
   // 100% {
   //   background-position: 0% center;
   // }
-}
-
-@mixin active {
 }

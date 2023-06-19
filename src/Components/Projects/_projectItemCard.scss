@@ -1,0 +1,68 @@
+// @import "../../AppVariables.scss";
+// @import "../../Mixins.scss";
+
+// .project-item {
+//   /** TESTING CODE */
+//   //   background-color: orangered;
+//   //   width: 2rem;
+//   //   height: 20vw;
+//   /** TESTING CODE */
+
+//   //   display: inline-block;
+//   //   position: relative;
+//   display: flex;
+//   height: 50vw;
+//   border-radius: 3rem;
+//   &__card {
+//     position: relative;
+//     height: 50vw;
+
+//     &__card-side {
+//       transition: all 0.8s ease;
+//       perspective: 150rem; // The lower the value, the more dramatic the effect is
+//       -moz-perspective: 150rem;
+//       position: absolute;
+//       top: 0px;
+//       left: 0px;
+//       width: 100%;
+//       backface-visibility: hidden;
+//     }
+
+//     &:hover &__img-side {
+//       transform: rotateY(180deg);
+//     }
+
+//     &:hover &__description-side {
+//       transform: rotateY(0);
+//     }
+
+//     &__img-side {
+//       /** TESTING CODE */
+//       //   background-color: orangered;
+//       width: 20rem;
+//       //   height: 20vw;
+//       /** TESTING CODE */
+//       &__img {
+//         //   width: 30vw;
+//       }
+//     }
+
+//     &__description-side {
+//       background-color: $color-green-dark;
+//       transform: rotateY(
+//         180deg
+//       ); // At the start, the description side is already rotated
+//       &__description {
+//         &__container {
+//         }
+
+//         &__heading {
+//         }
+//         &__description-text {
+//         }
+//       }
+//     }
+//   }
+
+//   //   overflow: hidden;
+// }

@@ -120,33 +120,12 @@
       font-size: 1.8rem;
       margin-left: 1.8rem;
       position: relative;
-      background-color: transparent;
-      transition: $transition0_3;
+      
       span {
         z-index: 1;
       }
-      &::before {
-        content: "";
-        width: 0%;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        background-color: $color-white;
-        left: 0;
-        right: 0;
-        z-index: -1;
-        transition: $transition0_3;
-      }
 
-      &:hover {
-        color: $color-grey-dark-1;
-        &::before {
-          content: "";
-          width: 100%;
-          height: 100%;
-          top: 0;
-        }
-      }
+      @include hoverEffectsButton();
     }
   }
 }
