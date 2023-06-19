@@ -144,12 +144,17 @@ const Banner = () => {
             praesentium aspernatur unde repudiandae debitis omnis, vitae iure
             deserunt iusto animi eos.
           </p>
-          <button className="banner__about-me__catch-up-button">
+          {/* <button className="banner__about-me__catch-up-button">
             <span>Let's get coffee </span>{" "}
             <RightArrow className="banner__about-me__catch-up-button__right-arrow" />
-          </button>
+          </button> */}
         </div>
         <div className="banner__floating-chirag">
+          <img
+            src={floatingChiragOriginal}
+            alt="Floating Astronaut Image"
+            className="banner__floating-chirag__original"
+          />
           {/* 
           // TODO: This is a future enhancement. Animate each individual asses, instead of the whole image.  
           <img
@@ -177,12 +182,6 @@ const Banner = () => {
             alt="Floating Astronaut Image"
             className="banner__floating-chirag__chat-with-diamond"
           /> */}
-
-          <img
-            src={floatingChiragOriginal}
-            alt="Floating Astronaut Image"
-            className="banner__floating-chirag__original"
-          />
         </div>
       </div>
     </section>
