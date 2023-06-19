@@ -1,5 +1,5 @@
 import "./_circleProgressBar.scss"; // Import corresponding CSS file if needed
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 interface InputProps {
   className: string;
   skillName: string;

@@ -2,7 +2,6 @@ import "./_project.scss";
 import chiflixImage from "../../assets/img/project-images/chiflix.jpg";
 import natoursImage from "../../assets/img/project-images/natours.jpg";
 import samsSushi from "../../assets/img/project-images/samsSushi.jpg";
-import { useRef, useState } from "react";
 import useVisibleElement from "../Hooks/useVisibleElement";
 const projectList = [
   {
@@ -34,6 +33,7 @@ const Project = () => {
     <section
       className={`project ${sectionVisible ? "project__visible" : ""}`}
       id="projects"
+      // @ts-expect-error TODO: Need to fix this error at a later time
       ref={sectionRef}
     >
       <div className="project__container">

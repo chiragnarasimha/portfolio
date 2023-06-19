@@ -11,10 +11,11 @@ import { useEffect, useRef, useState } from "react";
  * @returns isVisible: Whether the DOM element is visible or not
  *
  */
+// @ts-expect-error TODO: Need to fix this error at a later time
 const useVisibleElement = (options) => {
   const containerRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
-
+  // @ts-expect-error TODO: Need to fix this error at a later time
   const callbackFunction = (entries) => {
     const [entry] = entries;
     setIsVisible(entry.isIntersecting);

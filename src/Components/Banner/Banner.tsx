@@ -9,8 +9,7 @@ import "./_banner.scss";
 // import floatingChiragChatWithDiamond from "../../assets/img/floating-chirag/floating-chirag-chatWithDiamond.png";
  */
 import floatingChiragOriginal from "../../assets/img/floating-chirag/floating-chirag-original-compressed.png";
-import { RightArrow } from "../../assets/img/ReactComponents/RightArrow";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import useVisibleElement from "../Hooks/useVisibleElement";
 
 const Banner = () => {
@@ -129,6 +128,7 @@ const Banner = () => {
     <section
       className={`banner ${sectionRefVisible ? "banner__visible" : ""}`}
       id="home"
+      // @ts-expect-error TODO: Need to fix this error at a later time
       ref={sectionRef}
     >
       <div className="banner__container">
@@ -139,10 +139,13 @@ const Banner = () => {
             <span>{wordToType}</span>
           </h1>
           <p className="banner__about-me__description">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam
-            officia aut molestiae non repellat beatae odio dolores impedit
-            praesentium aspernatur unde repudiandae debitis omnis, vitae iure
-            deserunt iusto animi eos.
+            Chirag is an experienced front-end developer with a strong focus on
+            cloud-native technologies. He thrives on learning and embracing new
+            tools and techniques, using his critical thinking skills to
+            creatively solve complex business challenges. With a background in
+            sports, Chirag brings a "Team First" mentality and a resilient "Can
+            Do" attitude to his professional career, driving collaborative
+            success in every project.
           </p>
           {/* <button className="banner__about-me__catch-up-button">
             <span>Let's get coffee </span>{" "}

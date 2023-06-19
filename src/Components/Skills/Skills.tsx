@@ -55,6 +55,7 @@ const Skills = () => {
     <section
       id="skills"
       className={`skills ${sectionVisible ? "skills__visible" : ""}`}
+      // @ts-expect-error TODO: Need to fix this error at a later time
       ref={sectionRef}
     >
       <div className="skills__container">

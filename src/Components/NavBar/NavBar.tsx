@@ -24,6 +24,7 @@ const NavBar = () => {
   const handleClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
     console.log(event);
     event.preventDefault();
+    // @ts-expect-error TODO: Need to fix this error at a later time
     const target = event.target.getAttribute("href");
     const location = document.querySelector(target).offsetTop;
     window.scrollTo({
