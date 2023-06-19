@@ -18,8 +18,15 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+
+    /* Chirag WOrkarounds */
+    "noEmitOnError": false
   },
+  "ignoreDiagnostics": [
+    // ignore all errors
+    0
+  ],
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

@@ -1,6 +1,5 @@
 import "./App.scss";
 import Banner from "./Components/Banner/Banner.tsx";
-import ContactForm from "./Components/ContactForm/ContactForm.tsx";
 import NavBar from "./Components/NavBar/NavBar.tsx";
 import Project from "./Components/Projects/Project.tsx";
 
