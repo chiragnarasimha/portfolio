@@ -16,12 +16,25 @@
     opacity: 1;
   }
 
+  @media (width<=1000px) {
+    opacity: 1;
+    // min-height: fit-content;
+    padding-top: 0rem;
+    margin-bottom: 0rem;
+    // height: 10vh;
+  }
+
   &__container {
     display: flex;
     align-items: center;
     justify-content: center;
     justify-content: space-around;
+    flex-wrap: wrap-reverse;
     width: 100%;
+    @media (width<=1000px) {
+      flex-direction: column-reverse;
+      transform: scale(0.7);
+    }
   }
 
   &__about-me {
@@ -41,6 +54,14 @@
       width: fit-content;
       font-size: 6rem;
       // margin-bottom: 3rem;
+      @media (width<=1000px) {
+        width: 100%;
+        // overflow: hidden;
+        white-space: initial;
+        // margin-bottom: 3rem;
+        padding: 1rem 0rem;
+        height: 20rem;
+      }
     }
 
     &__heading {
@@ -80,6 +101,10 @@
       }
       @include hoverEffectsButton();
     }
+
+    @media (width<=1000px) {
+      width: 100%;
+    }
   }
 
   &__floating-chirag {
@@ -99,6 +124,9 @@
         border-radius: 2rem;
         @include hoverEffectsBackgroundFill();
       }
+    }
+    @media (width<=1000px) {
+      width: 100%;
     }
 
     //   &__other {

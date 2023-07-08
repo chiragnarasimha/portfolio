@@ -16,6 +16,7 @@
     // @include horizontalCenter();
     width: 80%;
   }
+
   &__header {
     // @include horizontalCenter();
     text-align: center;
@@ -29,11 +30,27 @@
     &__container {
       display: flex;
       justify-content: space-between;
+      @media (width<=1000px) {
+        opacity: 1;
+        min-height: fit-content;
+        margin-bottom: 0rem;
+        flex-direction: column;
+        width: 100%;
+        row-gap: 5rem;
+      }
     }
     &__item {
       width: 30%;
       border-radius: 2rem;
       height: 80%;
+
+      @media (width<=1000px) {
+        opacity: 1;
+        min-height: fit-content;
+        margin-bottom: 0rem;
+        flex-direction: column;
+        width: 100%;
+      }
 
       overflow: hidden;
       transition: all 0.3s linear;
